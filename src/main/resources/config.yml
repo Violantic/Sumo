@@ -1,0 +1,15 @@
+spawn:
+     x: 977
+     y: 82
+     z: -3
+mats:
+     mat_01:
+          x: 977
+          y: 79
+          z: 9
+          one-x: 973
+          one-y: 79
+          one-z: 9
+          two-x: 981
+          two-y: 79
+          two-z: 9

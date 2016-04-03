@@ -1,0 +1,8 @@
+name: Sumo
+version: 1.0
+main: me.violantic.sumo.Sumo
+description: Fun mini-mini game.
+
+commands:
+     sumo:
+          description: Use this for the default mini-mini-game command.
