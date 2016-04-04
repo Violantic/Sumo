@@ -9,10 +9,18 @@ import org.bukkit.Material;
 public class SumoMat implements Mat {
 
     /**
-     * Variables.
+     * Location that is the center of the map.
      */
     public Location location;
+
+    /**
+     * Location that is the first player's spawn.
+     */
     public Location one;
+
+    /**
+     * Location that is the second player's spawn.
+     */
     public Location two;
 
     /**

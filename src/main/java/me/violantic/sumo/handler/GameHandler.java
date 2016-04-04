@@ -12,9 +12,13 @@ import java.util.List;
 public class GameHandler {
 
     /**
-     * Variables.
+     * List that keeps track of who is currently in a match.
      */
     public List<Player> pvp = new ArrayList<Player>();
+
+    /**
+     * Instance of plugin's main class.
+     */
     public Sumo instance;
 
     /**

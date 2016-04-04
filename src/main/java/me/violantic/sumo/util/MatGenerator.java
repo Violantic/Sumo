@@ -13,13 +13,19 @@ import java.util.List;
  */
 public class MatGenerator {
 
+    /**
+     * List that contains all mats (Blocks)
+     */
     public static List<Block> blockList = new ArrayList<Block>();
 
+    /**
+     * Constructor
+     */
     public MatGenerator() {}
 
     /**
      * Spawn a Mat
-     * TODO - Generate a mat if Mat::isCircular() == true
+     * TODO - Generate a mat if Mat::isCircular == true
      * @param mat
      */
     public static void spawn(Mat mat) {

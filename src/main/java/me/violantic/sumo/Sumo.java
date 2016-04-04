@@ -14,9 +14,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -25,13 +23,28 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Sumo extends JavaPlugin implements Listener {
 
     /**
-     * Variables
+     * Instance of the plugin.
      */
     public static Sumo instance;
+
+    /**
+     * Handles everything challenge/request related.
+     */
     public ChallengeHandler challenge;
+
+    /**
+     * Handles everything mat related.
+     */
     public MatHandler mat;
+
+    /**
+     * Handles everything game related.
+     */
     public GameHandler game;
 
+    /**
+     * When the server starts.
+     */
     @Override
     public void onEnable() {
         instance = this;
@@ -51,26 +64,41 @@ public class Sumo extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new GameListener(), this);
     }
 
+    /**
+     * When the server shuts down.
+     */
     @Override
     public void onDisable() {
         removeMat();
     }
 
     /**
-     * Getters
+     * Instance of the plugin.
      */
     public static Sumo getInstance() {
         return instance;
     }
 
+    /**
+     * Handles all player challenges/requests.
+     * @return
+     */
     public ChallengeHandler getChallenges() {
         return this.challenge;
     }
 
+    /**
+     * Handles all mats.
+     * @return
+     */
     public MatHandler getMats() {
         return this.mat;
     }
 
+    /**
+     * Handles everything game related.
+     * @return
+     */
     public GameHandler getGame() {
         return this.game;
     }
@@ -127,14 +155,6 @@ public class Sumo extends JavaPlugin implements Listener {
     public void removeMat() {
         for(Block b : MatGenerator.blockList) {
             b.setType(Material.AIR);
-        }
-    }
-
-    // for funsies //
-    @EventHandler
-    public void onChat(AsyncPlayerChatEvent event) {
-        if(event.getPlayer().isOp()) {
-            event.setFormat(ChatColor.RED + "[ADMIN] " + event.getPlayer().getName() + ChatColor.WHITE + ": " + event.getMessage());
         }
     }
 

@@ -12,11 +12,23 @@ import java.util.Map;
 public class ChallengeHandler {
 
     /**
-     * Variables.
+     * Map that keeps track of who requests who to a sumo challenge.
      */
     public Map<Player, Player> request = new HashMap<Player, Player>();
+
+    /**
+     * Map that keeps track of whoever challenged and their challenge.
+     */
     public Map<Player, Player> challengerMap = new HashMap<Player, Player>();
+
+    /**
+     * Map that keeps track of whoever was challenged and their challenger.
+     */
     public Map<Player, Player> challengedMap = new HashMap<Player, Player>();
+
+    /**
+     * Instance of the class
+     */
     public Sumo instance;
 
     /**

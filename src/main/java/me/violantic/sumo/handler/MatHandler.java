@@ -17,10 +17,18 @@ import java.util.Map;
 public class MatHandler {
 
     /**
-     * Variables.
+     * Map that tracks all mats and whether or not they are usable at the current time.
      */
     public Map<Mat, Boolean> reservations = new HashMap<Mat, Boolean>();
+
+    /**
+     * Map that tracks the player (Challenger) that is currently reserving a mat.
+     */
     public Map<Player, Mat> reserved = new HashMap<Player, Mat>();
+
+    /**
+     * Instance of plugins main class.
+     */
     public Sumo instance;
 
     /**
@@ -60,6 +68,8 @@ public class MatHandler {
                                 this.add(challenged);
                                 challenger.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 180, 2));
                                 challenged.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*180, 2));
+                                challenger.sendMessage(Sumo.getInstance().getPrefix() + "FIGHT!");
+                                challenged.sendMessage(Sumo.getInstance().getPrefix() + "FIGHT!");
                             }
                         });
                     }
